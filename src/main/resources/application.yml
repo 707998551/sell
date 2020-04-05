@@ -1,0 +1,52 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://127.0.0.1:3306/sell?characterEncoding=utf-8&useSSL=false
+  jpa:
+    show-sql: true
+  jackson:
+    default-property-inclusion: non_null
+  redis:
+    host: 192.168.1.112
+    port: 6379
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+##  path: log/
+#  file: log/sell.log
+#  level:
+#    com.imooc.sell.LoggerTest: debug
+server:
+  context-path: /sell
+wechat:
+  #公众账号，授权
+  mpAppId: wx1d4b4555e5cf5536
+  mpAppSecret: 710e7640651fe798210686127c3dbcfe
+  #wxd898fcb01713c658
+  #wx1d4b4555e5cf5536
+
+  #开放平台，卖家扫码登陆用
+  openAppId: wx6ad144e54af67d87
+  openAppSecret: 91a2ff6d38a2bbccfb7e9f9079108e2e
+
+  #支付/商户号
+  mchId: 1483469312
+  mchKey: 098F6BCD4621D373CADE4E832627B4F6
+  #发起支付需要证书，退款需要
+  keyPath: /users/robert/imooc/imooc-al/weiin_cert/h5.p12
+  notifyUrl: http://bairb.natapp1.cc/sell/pay/notify
+  templateId:
+    orderStatus: zms7mClnPYAyeANbNhSQ5X7WEQiff7xYzT_u13D4FEc
+
+projectUrl:
+  wechatMpAuthorize: http://bairb.natapp1.cc
+  wechatOpenAuthorize: http://bairb.natapp1.cc
+  sell: http://bairb.natapp1.cc
+logging:
+  level:
+    com.imooc.sell.dataobject.mapper: trace
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
